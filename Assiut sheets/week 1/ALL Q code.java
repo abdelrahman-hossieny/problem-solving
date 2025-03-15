@@ -284,6 +284,83 @@ public class Main {
     }
 }
 //=================================================
-// problem: Mathematical Expression
+// problem: The last 2 digits                                                                    //  ❌look here❌
 //=================================================
+import java.util.Scanner;
+
+public class Main {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int l1 = sc.nextInt();
+       int r1 = sc.nextInt();
+       int l2 = sc.nextInt();
+       int r2 = sc.nextInt();
+
+       int product = l1 * r1 * l2 * r2;
+       int lastTwoDigits = Math.abs(product % 100);
+
+       System.out.println(lastTwoDigits);
+   }
+}
+//correct solution⬇️⬇️
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();
+        long D = sc.nextLong();
+        sc.close();
+
+        // Keep only the last two digits at each step
+        long result = (A % 100) * (B % 100) % 100;
+        result = (result * (C % 100)) % 100;
+        result = (result * (D % 100)) % 100;
+
+        System.out.printf("%02d%n", result);
+    }
+}
+//=================================================
+// problem: Hard Compare
+//=================================================
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();
+        long D = sc.nextLong();
+        if (Math.pow(A,B) > Math.pow(C,D)){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
+        }
+    }
+}
+//correct solution⬇️⬇️
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();
+        long D = sc.nextLong();
+        sc.close();
+
+        // Use logarithms to compare
+        double left = B * Math.log(A);
+        double right = D * Math.log(C);
+
+        if (left > right) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
 
