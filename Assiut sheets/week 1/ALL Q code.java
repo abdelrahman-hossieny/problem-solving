@@ -91,6 +91,28 @@ public class Main {
         }
     }
 }
+// another solution
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        char X = s.next().charAt(0);
+        s.close();
+
+        if (Character.isDigit(X)) {
+            System.out.println("IS DIGIT");
+        } else {
+            System.out.println("ALPHA");
+            if (Character.isLowerCase(X)) {
+                System.out.println("IS SMALL");
+            } else {
+                System.out.println("IS CAPITAL");
+            }
+        }
+    }
+}
+
 //=================================================
 // problem:  Calculator
 //=================================================
