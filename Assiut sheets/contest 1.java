@@ -57,3 +57,56 @@ public class Main {
 // ===========================================
 // problem:  Ali Baba and Puzzles
 // ==========================================
+
+// ===========================================
+// problem:  Interval Sweep
+// ==========================================
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt(); // Odd numbers count
+        int b = sc.nextInt(); // Even numbers count
+
+        if (a == 0 ||b == 0) {
+            System.out.println("NO");
+        } else if (Math.abs(a-b)==1 ||Math.abs(a-b)==0 ) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
+// ===========================================
+// problem:  F. Adding Bits
+// ==========================================
+// IFF you need to know about adding 2 nums 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int sum=0;
+        int carry;
+        while (b!=0){
+            sum = a ^ b;
+            carry = (a & b) << 1;
+            a=sum;
+            b=carry;
+       }
+        System.out.println(a);
+    }
+}
+// True solution
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        System.out.println(A ^ B);  // Bitwise XOR to simulate Parker's mistake
+    }
+}
