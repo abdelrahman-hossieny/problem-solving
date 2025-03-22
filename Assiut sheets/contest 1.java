@@ -110,3 +110,36 @@ public class Main {
         System.out.println(A ^ B);  // Bitwise XOR to simulate Parker's mistake
     }
 }
+// ===========================================
+// problem:  G. Katryoshka
+// ==========================================
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        long e = sc.nextLong(); // Number of eyes
+        long m = sc.nextLong(); // Number of mouths
+        long b = sc.nextLong(); // Number of bodies
+
+        long res = 0;
+
+        // Find the minimum among (e, m, b)
+        long mn = Math.min(e, Math.min(m, b));
+
+        res += mn;
+        e -= mn;
+        m -= mn;
+        b -= mn;
+
+        // Find the minimum among (e/2, b)
+        mn = Math.min(e / 2, b);
+        res += mn;
+
+        System.out.println(res);
+
+        sc.close();
+    }
+}
+
