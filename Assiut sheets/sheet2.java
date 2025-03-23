@@ -44,3 +44,34 @@ public class Main {
         System.out.println(arr[N-1]);
     }
 }
+
+//=========================================
+//problem : h.prime number
+//=========================================
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+
+        if (x == 1) {
+            System.out.println("No");
+            return;
+        }
+
+        boolean isprime = true;
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0) {
+                isprime = false;
+                break;
+            }
+        }
+
+        if (isprime) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
