@@ -75,3 +75,51 @@ public class Main {
         }
     }
 }
+
+//=========================================
+//problem : I. Palindrome
+//=========================================
+//            HINTS
+// TO REVERSE INTEGER NUMBER WE HAVE TWO CHOICE :
+// CHOICE 1
+int num = sc.nextInt();       
+String reversedStr = new StringBuilder(String.valueOf(num)).reverse().toString(); // تحويل العدد إلى نص وعكسه
+int reversedNum = Integer.parseInt(reversedStr); // تحويله مرة أخرى إلى عدد صحيح
+// CHOICE 2
+int num = sc.nextInt();
+int reversed=0;
+while(num != 0 ){
+    int digit = num %10;
+    reversedNum = reversedNum * 10 + digit;
+    num/=10;
+}
+ // problem solution
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int originalNum = num; // MUST
+        int reversedNum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            reversedNum = reversedNum * 10 + digit;
+            num /= 10;
+        }
+
+        System.out.println(reversedNum);
+        if (originalNum == reversedNum) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
+//=========================================
+//problem : Primes from 1 to n
+//=========================================
+
+
+
