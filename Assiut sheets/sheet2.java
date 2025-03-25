@@ -118,8 +118,41 @@ public class Main {
     }
 }
 //=========================================
-//problem : Primes from 1 to n
+//problem : lucky number   
 //=========================================
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        boolean isLuckyFound = false; // Flag to check if we found any lucky number
+
+        for (int i = a; i <= b; i++) {
+            String str = String.valueOf(i);  // Convert number to string
+            boolean islucky = true; // Assume number is lucky initially
+
+            for (int j = 0; j < str.length(); j++) {
+                char digit = str.charAt(j);
+                if (!(digit == '7' || digit == '4')) {
+                    islucky = false;  // If there's a digit other than 4 or 7, it's not lucky
+                    break;  // No need to check further digits, break the loop
+                }
+            }
+
+            if (islucky) {
+                isLuckyFound = true;  // We found at least one lucky number
+                System.out.print(i + " ");  // Print the lucky number
+            }
+        }
+
+        if (!isLuckyFound) {
+            System.out.println("-1");  // If no lucky numbers found
+        }
+    }
+}
 
 
 
