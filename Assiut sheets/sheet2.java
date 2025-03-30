@@ -154,5 +154,33 @@ public class Main {
     }
 }
 
+//=========================================
+//problem : R. Sequence of Numbers and Sum ❌❌❌❌❌  
+//=========================================
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        while (true) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+            // Check termination condition before processing
+            if (a <= 0 || b <= 0) {
+                break;
+            }
+
+            int sum = 0;
+            for (int i = Math.min(a, b); i <= Math.max(a, b); i++) {
+                System.out.print(i + " ");
+                sum += i;
+            }
+            System.out.println("sum =" + sum); // Use println to move to next line
+        }
+    }
+}
 
 
