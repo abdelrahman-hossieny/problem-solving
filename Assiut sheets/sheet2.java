@@ -185,6 +185,8 @@ public class Main {
 //=========================================
 //problem : X. Convert To Decimal 2                                         ❌❌❌❌❌              ❌❌❌❌❌               ❌❌❌❌❌  
 //=========================================
+// solution(1):
+
 import java.util.Scanner;
 
 public class Main {
@@ -207,6 +209,38 @@ public class Main {
 
             int result = Integer.parseInt(onesBinary, 2);
             System.out.println(result);
+        }
+    }
+}
+
+//============================================
+// solution(2):
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int T = input.nextInt(); 
+        
+        for (int i = 0; i < T; i++) {
+            int N = input.nextInt();
+            
+            String binary = Integer.toBinaryString(N);
+            
+            int count = 0;
+            for (int j = 0; j < binary.length(); j++) {
+                if (binary.charAt(j) == '1') {
+                    count++;
+                }
+            }
+            
+            int result = 0;
+            for (int k = 0; k < count; k++) {
+                result = result * 2 + 1;
+            }
+            
+            System.out.println(result); 
         }
     }
 }
