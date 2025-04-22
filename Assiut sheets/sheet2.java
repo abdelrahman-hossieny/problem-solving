@@ -182,5 +182,31 @@ public class Main {
         }
     }
 }
+//=========================================
+//problem : X. Convert To Decimal 2                                         ❌❌❌❌❌              ❌❌❌❌❌               ❌❌❌❌❌  
+//=========================================
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();  
 
+        for (int i = 0; i < T; i++) {
+            int N = scanner.nextInt();
+
+            String binary = Integer.toBinaryString(N);
+            int countOnes = 0;
+            for (char c : binary.toCharArray()) {
+                if (c == '1') {
+                    countOnes++;
+                }
+            }
+
+            String onesBinary = "1".repeat(countOnes);
+
+            int result = Integer.parseInt(onesBinary, 2);
+            System.out.println(result);
+        }
+    }
+}
