@@ -239,8 +239,91 @@ public class Main {
             for (int k = 0; k < count; k++) {
                 result = result * 2 + 1;
             }
-            
+
             System.out.println(result); 
+        }
+    }
+}
+
+//=========================================
+//problem :Y. Easy Fibonacci
+//=========================================
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static int fib(int n) {
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+
+        for (int i = 1; i <= N; i++) {
+            System.out.print(fib(i));
+            if (i != N) {
+                System.out.print(" ");
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N = input.nextInt(); 
+    
+        for (int i = 1; i <= N; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+    
+    // دالة حساب رقم فيبوناتشي
+    public static int fibonacci(int n) {
+        if (n == 1) {
+            return 0;
+        } else if (n == 2) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+}
+
+memoization 
+
+import java.util.Scanner;
+
+public class Main {
+    static int[] memo = new int[46]; // لأن N ≤ 45
+
+    public static int fib(int n) {
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+
+        if (memo[n] != -1) return memo[n];
+
+        memo[n] = fib(n - 1) + fib(n - 2);
+        return memo[n];
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+
+        // تهيئة المصفوفة بقيم -1 للدلالة على أنها لم تُحسب بعد
+        for (int i = 0; i <= N; i++) {
+            memo[i] = -1;
+        }
+
+        for (int i = 1; i <= N; i++) {
+            System.out.print(fib(i));
+            if (i != N) System.out.print(" ");
         }
     }
 }
