@@ -29,3 +29,41 @@ public class Main {
         }
     }
 }
+
+//--------------------------------------------------
+// problem: I. Smallest Pair
+//--------------------------------------------------
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); // عدد الحالات
+        
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int[] A = new int[N];
+
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+
+            int min = Integer.MAX_VALUE;
+
+            for (int i = 0; i < N; i++) {
+                for (int j = i + 1; j < N; j++) {
+                    int sum = A[i] + A[j] + (j - i);
+                    if (sum < min) {
+                        min = sum;
+                    }
+                }
+            }
+
+            System.out.println(min);
+        }
+    }
+}
+
