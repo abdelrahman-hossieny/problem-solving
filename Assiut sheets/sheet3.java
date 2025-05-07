@@ -97,3 +97,45 @@ public class Main {
 
     }
 }
+
+//--------------------------------------------------
+// problem: N - Check Code
+//--------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        String s = sc.next();
+
+        // تحقق من الطول أولًا
+        if (s.length() != A + B + 1) {
+            System.out.println("No");
+            return;
+        }
+
+        // تحقق أن الحرف في الموضع A هو '-'
+        if (s.charAt(A) != '-') {
+            System.out.println("No");
+            return;
+        }
+
+        // تحقق أن باقي الأحرف هي أرقام
+        for (int i = 0; i < s.length(); i++) {
+            if (i == A) continue; // نتخطى الشرطة
+
+            if (!Character.isDigit(s.charAt(i))) {
+                System.out.println("No");
+                return;
+            }
+        }
+
+        // إذا مرّت كل الشروط
+        System.out.println("Yes");
+    }
+}
+
