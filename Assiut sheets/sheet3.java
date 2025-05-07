@@ -149,7 +149,7 @@ public class Main {
         
         int N = sc.nextInt();
         
-        long [] fib = new int[N + 1];
+        long [] fib = new int[N + 1];  // look this must be long not integer
 
         fib[1] = 0;  
         fib[2] = 1;  
